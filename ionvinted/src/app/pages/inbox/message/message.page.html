@@ -1,0 +1,64 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start" mode="md">
+        <ion-back-button mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{user.pseudo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-grid>
+
+    <ion-row class="me"> <ion-col class="bubble"> Lorem ipsum </ion-col> </ion-row>
+
+    <ion-row class="to">
+        <ion-col size="2">
+            <ion-avatar> <img  src="./assets/img/avatars/avatar{{user.id}}.jpg"> </ion-avatar>
+        </ion-col>
+        <ion-col size="10" no-padding> <div class="bubble">Dolor sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui amet tempora. Fugiat explicabo rem consequatur. Reprehenderit culpa, nesciunt inventore id obcaecati molestias illum eum dolore totam eligendi corporis eaque? </div> </ion-col>
+    </ion-row>
+
+    <ion-row class="me"> <ion-col class="bubble"> Sit amet consecteur </ion-col> </ion-row>
+
+    <div class="date">14/06/2019</div>
+
+    <ion-row class="to">
+        <ion-col size="2">
+            <ion-avatar> <img src="./assets/img/avatars/avatar{{user.id}}.jpg"> </ion-avatar>
+        </ion-col>
+        <ion-col no-padding> <div class="bubble"> eligen</div> </ion-col>
+    </ion-row>
+
+    <ion-row class="me"> <ion-col class="bubble"> Sit amet consecteur  jkl hh</ion-col> </ion-row>
+
+    <ion-row class="to">
+        <ion-col size="2">
+            <ion-avatar> <img src="./assets/img/avatars/avatar{{user.id}}.jpg"> </ion-avatar>
+        </ion-col>
+        <ion-col no-padding> <div class="bubble"> eligen lorem ipsum</div> </ion-col>
+        
+    </ion-row>
+
+  </ion-grid>
+
+      
+    
+
+ 
+</ion-content>
+ <ion-footer mode="md">
+    <ion-input mode="md" class="write" placeholder="{{ 'Write a message...' | translate }}"></ion-input>
+
+    <ion-list style="padding-bottom: 0;" mode="md">
+        <ion-item  lines="none"> 
+                <ion-icon name="ios-camera"></ion-icon>
+            <ion-button slot="end" mode="md" fill="clear" translate>Send</ion-button>
+        
+        </ion-item>  
+    </ion-list>
+
+   
+ </ion-footer>

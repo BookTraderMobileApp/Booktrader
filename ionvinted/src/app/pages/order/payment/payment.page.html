@@ -1,0 +1,122 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
+      <ion-buttons mode="md" slot="start">
+          <ion-back-button mode="md"></ion-back-button>
+      </ion-buttons>
+    <ion-title translate>Payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-thumbnail>
+      <img src="./../../assets/img/products/product{{product.id}}_1.jpg"/>
+    </ion-thumbnail>
+
+    <ion-list mode="md" class="summary">
+        <ion-item  mode="md" class="price" lines="full">
+           
+                <div slot="start">
+                  <p translate> Price </p>
+                  <p translate> Shipping </p>
+                  <p translate> Buyer protection <ion-icon name="ios-information-circle-outline"></ion-icon> </p>
+                  <p translate> <b> Total</b> </p>
+                </div>
+                <div slot="end" class="ion-text-end">
+                    <p> {{product.price}} € </p>
+                    <p> 4.39 € </p>
+                    <p> 1.70 € </p>
+                    <p> <b> {{price + 6.09 | number : '1.2-2'}} € </b> </p>
+                </div> 
+           
+        </ion-item>
+
+        <ion-item lines="none" class="label_fix" mode="md"> Address</ion-item>
+
+        <ion-item class="address" lines="full" mode="md" button="true" [routerLink]="['/address']">
+            <div slot="start">
+              <p><b>John Doe</b> <br> 
+                123 Main St <br>
+                Anytown, USA
+              </p>
+            </div>
+            <div slot="end" class="ion-text-end">
+                <ion-icon name="md-create" class="edit"></ion-icon>
+            </div> 
+       
+        </ion-item>
+
+        <ion-item lines="none" class="label_fix" mode="md"> Payment</ion-item>
+
+        <ion-item class="payment_option" lines="full" mode="md" button="true" [routerLink]="['/payment-option']">
+           
+            <div slot="start">
+              <p>
+                 
+                  <ion-icon src="../../../assets/img/paypal.svg" class="logo" slot="start"></ion-icon>
+                  <b translate class="label">Paypal </b>
+              </p>
+            </div>
+            <div slot="end" class="ion-text-end">
+                <ion-icon name="md-create" class="edit"></ion-icon>
+            </div> 
+       
+        </ion-item>
+
+        <ion-item lines="none" class="label_fix" mode="md"> Shipping</ion-item>
+
+        <ion-radio-group>
+        <ion-item class="shipping" lines="full" mode="md"  button="true">
+            <ion-icon item-start src="../../../assets/img/mondial.svg" class="mrelay_icon"></ion-icon>
+            <ion-label>
+              <p><b translate> At pick-up point in 3-5 days</b></p>
+              <p>Mondial Relay</p>
+            </ion-label>
+
+            <p item-end> 
+              <ion-label>3.78€ </ion-label>
+              <ion-radio mode="md"></ion-radio>
+            </p>
+            
+        </ion-item>
+
+        <ion-item class="shipping" lines="full" mode="md"  button="true">
+            <ion-icon item-start src="../../../assets/img/chrono.svg" class="chrono_icon"></ion-icon>
+            <ion-label>
+              <p><b translate> At pick-up point in 2 days</b></p>
+              <p>Chrono Shop2Shop</p>
+            </ion-label>
+
+            <p item-end> 
+              <ion-label>5.29€ </ion-label>
+              <ion-radio mode="md"></ion-radio>
+            </p>
+        </ion-item>
+
+        <ion-item class="shipping" lines="none" mode="md"  button="true">
+            <ion-icon item-start src="../../../assets/img/laposte.svg" class="laposte_icon"></ion-icon>
+            <ion-label>
+              <p><b translate> Home delivery in 2-3 days</b></p>
+              <p>La Poste</p>
+            </ion-label>
+
+            <p item-end> 
+              <ion-label>8.80€ </ion-label>
+              <ion-radio mode="md"></ion-radio>
+            </p>
+        </ion-item>
+      </ion-radio-group>
+
+    </ion-list>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar mode="ios">
+      <p>
+          <ion-icon  name="md-lock"></ion-icon>  <span translate>This is a secure encrypted payment</span>
+      </p>
+
+      <ion-button mode="md" expand="block" color="success" translate> Pay</ion-button>
+     
+    </ion-toolbar>
+</ion-footer>

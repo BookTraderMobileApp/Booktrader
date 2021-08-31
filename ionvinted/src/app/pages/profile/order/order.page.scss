@@ -1,0 +1,27 @@
+.price {
+    float:right;
+    font-size:14px;
+}
+.status {
+    display:block;
+    font-size:14px;
+}
+.date{
+    font-size:14px;
+}
+
+ion-thumbnail{
+    position:relative;
+    --border-radius:5px;
+}
+
+ion-label ion-icon{
+    font-size:20px;
+    float:right;
+}
+
+.title{
+    font-weight:bold;
+    text-transform: capitalize;
+    font-size:15px;
+}

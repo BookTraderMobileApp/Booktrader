@@ -1,0 +1,85 @@
+ion-thumbnail{
+    width:140px;
+    height:140px;
+    margin:auto;
+    margin-top:20px;
+    margin-bottom:20px;
+    --border-radius : 5px;
+}
+
+.price p{
+    margin-bottom:10px;
+    margin-top:0px;
+}
+
+.price ion-icon {
+    font-size: 20px;
+    vertical-align: text-bottom;
+    color: var(--ion-text-color);
+}
+
+.price {
+    padding-bottom:10px;
+}
+
+.summary {
+    border-top:solid var( --ion-color-medium-shade) 1px;
+}
+
+.edit {
+    font-size:20px;
+}
+
+.payment_option .label {
+    position:absolute;
+    top:18px;
+    margin-left:10px;
+}
+
+.payment_option .logo {
+    border: solid var(--ion-color-medium-shade) 1px;
+    padding: 6px 14px;
+    border-radius: 5px;
+}
+
+.label_fix {
+    font-size: 13px;
+    height: 35px;
+}
+
+.label, p {
+    font-size:15px;
+}
+
+.shipping ion-icon {
+margin-right: 10px;
+padding: 2px 10px;
+border-radius: 5px;
+}
+
+.mrelay_icon {
+    background-color: #b90546;
+}
+.chrono_icon {
+    background-color: #299cde;
+}
+.laposte_icon {
+    background-color: #ffdd01;
+}
+
+ion-radio {
+    margin-top: 0;
+    margin: auto;
+}
+
+ion-footer p {
+    text-align:center;
+    font-size:12px;
+    color: var(--ion-text-color);
+}
+
+ion-footer ion-icon {
+    line-height: 10px;
+    vertical-align: sub;
+    font-size: 16px;
+}

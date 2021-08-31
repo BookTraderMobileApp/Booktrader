@@ -1,0 +1,66 @@
+.avatar 
+{
+  width:24px;
+  height:24px;
+}
+
+.product-item , .product-item ion-label
+{
+    font-size:12px;
+    font-weight: 400;
+    font-family: "Maison Neue", "Helvetica Neue", "Helvetica-Neue", "Arial", sans-serif;
+}
+
+.cover 
+{
+  width:100%;
+  height:208px;
+}
+
+.product_price 
+{
+  color: var(--ion-color-dark);
+  font-weight:bold;
+  font-size:13px;
+  font-weight: 600;
+}
+
+.product_fav 
+{
+  text-align:right;
+  display:block;
+  width:100%;
+  font-weight: 600;
+  color: var(--ion-text-color);
+
+}
+
+.product_fav ion-icon{
+  font-size:17px;
+  vertical-align: top;
+}
+
+.product_fav .fav_number
+{
+  font-size:13px;
+}
+
+.user-name 
+{
+  line-height:25px;
+  padding-left:5px;
+}
+
+.product-bottom { 
+  text-align:left;
+}
+
+.sync {
+  margin-left: 5px;
+}
+
+.specific_price {
+  font-size:11px;
+  text-decoration: line-through;
+  margin-left: 2px;
+}

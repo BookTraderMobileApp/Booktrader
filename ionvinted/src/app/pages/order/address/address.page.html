@@ -1,0 +1,59 @@
+<ion-header mode="ios">
+    <ion-toolbar mode="md">
+        <ion-buttons mode="md" slot="start">
+            <ion-back-button mode="md"></ion-back-button>
+        </ion-buttons>
+      <ion-title translate>Address</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+     <ion-item mode="md">
+        <ion-label mode="md" position="stacked" translate> Name Surname</ion-label>
+        <ion-input value="John Doe" placeholder="e.g. Jane Doe"></ion-input>
+      </ion-item>
+
+        
+          <ion-item mode="md">
+            <ion-label mode="md" position="stacked">Country</ion-label>
+            <ion-select mode="md" interface="popover">
+              <ion-select-option value="USA" selected>USA</ion-select-option>
+              <ion-select-option value="France">France</ion-select-option>
+              <ion-select-option value="Spain">Spain</ion-select-option>
+            </ion-select>
+          </ion-item>
+        
+          <ion-item mode="md">
+              <ion-label mode="md" position="stacked" translate> Address line 1</ion-label>
+              <ion-input value="123 Main Street" placeholder="e.g. 123 Main Street"></ion-input>
+            </ion-item>
+
+            <ion-item mode="md">
+                <ion-label mode="md" position="stacked" translate> Address line 2 (optional)</ion-label>
+                <ion-input  placeholder="e.g. Apt.2"></ion-input>
+              </ion-item>
+
+              <ion-item mode="md">
+                  <ion-label mode="md" position="stacked" translate> Postcode</ion-label>
+                  <ion-input  placeholder="e.g. 12345"></ion-input>
+              </ion-item>
+        
+              <ion-item mode="md">
+                  <ion-label mode="md" position="stacked">City</ion-label>
+                  <ion-select mode="md" interface="popover">
+                    <ion-select-option selected value="Anytown">Anytown</ion-select-option>
+                    <ion-select-option value="Anytown 2">Anytown 2</ion-select-option>
+                    <ion-select-option value="...">...</ion-select-option>
+
+                </ion-select>
+                </ion-item>
+         <p class="small" translate> Your postcode will set city options. </p>
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar> <ion-button mode="md" expand="block" [routerLink]="['/payment']" translate> Save </ion-button> </ion-toolbar>
+</ion-footer>

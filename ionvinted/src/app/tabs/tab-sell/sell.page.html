@@ -1,0 +1,148 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
+    <ion-title translate>
+      Sell an item
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="section upload">
+    <p><span translate>Add up to 3 photos </span> <a translate>See photo tips</a></p>
+    <ion-segment mode="md" scrollable >
+
+      <ion-thumbnail mode="md" *ngFor="let image of images; let id = index">
+          <ion-icon name="close-circle" (click)="deletePhoto(id)" color="light"></ion-icon>
+          <ion-img [src]="image"> </ion-img>
+      </ion-thumbnail>
+
+      <ion-button *ngIf="images.length<3" mode="md" fill="outline" class="btn-add-photo" (click)="presentAlertMultipleButtons()">
+        <ion-icon *ngIf="!images.length" slot="start" name="add"></ion-icon>
+        <ion-icon *ngIf="images.length" name="add"></ion-icon>
+        <span translate *ngIf="!images.length">Upload photos</span>
+      </ion-button>
+      
+    </ion-segment>
+  </div>
+
+  <div class="section presentation">
+    <ion-item mode="md">
+      <ion-label mode="md" position="stacked" translate>Title</ion-label>
+      <ion-input placeholder="{{ 'e.g. White COS Sweater' | translate }}"></ion-input>
+    </ion-item> <hr/>
+
+    <ion-item mode="md">
+      <ion-label mode="md" position="stacked" translate>Describe your item</ion-label>
+      <ion-input placeholder="{{ 'e.G. only worn a few times, true to size' | translate }}"></ion-input>
+    </ion-item>
+
+  </div>
+
+  <div class="section features">
+    <ion-list class="ion-no-padding" mode="md">
+     <!-- <ion-item detail lines="full" button="true" mode="md"> 
+        <p class="label" translate>Category</p>  
+      </ion-item>  -->
+
+      <ion-item lines="full" button="true" mode="md">
+          <ion-label class="label" translate>Category</ion-label>
+          <ionic-selectable
+            [(ngModel)]="selectedCategory"
+            [items]="categories"
+            itemValueField="category_id"
+            itemTextField="name"
+            [canSearch]="true"
+            searchPlaceholder="Find a category"
+           
+            item-content
+            groupValueField="parent.name" 
+            groupTextField="parent.name"
+            (onChange)="categoryChange($event)">
+            <ng-template ionicSelectableCloseButtonTemplate>
+                <ion-back-button defaultHref="/tabs/sell" mode="md"></ion-back-button>
+            </ng-template>
+            <ng-template ionicSelectableGroupTemplate let-group="group">
+              <ion-icon color="primary" slot="start" [src]="group.items[0].icon" alt=""> </ion-icon> <span translate>{{group.text}}</span> 
+            </ng-template>
+
+            <ng-template ionicSelectableItemTemplate let-child="item" >
+                <span translate>{{child.name}}</span> 
+            </ng-template>
+
+            <ng-template ionicSelectableValueTemplate let-val="value">
+                <span translate>{{val.name}}</span>
+              </ng-template>
+
+            
+          </ionic-selectable>
+      </ion-item>
+
+      <ion-item lines="full" button="true" mode="md">
+          <ion-label class="label" translate>Brand</ion-label>
+          <ionic-selectable
+            [(ngModel)]="selectedBrand"
+            [items]="brands"
+            itemValueField="id"
+            itemTextField="name"
+            [canSearch]="true"
+            searchPlaceholder="Find a brand"
+            (onChange)="brandChange($event)">
+            <ng-template ionicSelectableCloseButtonTemplate>
+                <ion-back-button defaultHref="/tabs/sell" mode="md"></ion-back-button>
+            </ng-template>
+            
+          </ionic-selectable>
+      </ion-item>
+
+      <ion-item lines="full" button="true" mode="md">
+          <ion-label class="label" translate>Condition</ion-label>
+          <ionic-selectable
+            [(ngModel)]="selectedCondition"
+            [items]="conditions"
+            itemValueField="id"
+            itemTextField="name"
+            [canSearch]="false"
+            (onChange)="brandChange($event)">
+            <ng-template ionicSelectableCloseButtonTemplate>
+                <ion-back-button defaultHref="/tabs/sell" mode="md"></ion-back-button>
+            </ng-template>
+
+            <ng-template ionicSelectableItemTemplate let-child="item" > 
+                  <ion-label>
+                      <b translate>{{child.name}}</b>
+                      <p translate>{{child.desc}} </p>
+                  </ion-label>
+          
+            </ng-template>
+
+            <ng-template ionicSelectableValueTemplate let-val="value">
+                <span translate>{{val.name}}</span>
+              </ng-template>
+
+            
+          </ionic-selectable>
+      </ion-item>
+
+
+    </ion-list>
+  </div>
+
+  <div class="section presentation">
+      <ion-list mode="md">
+          <ion-item mode="md">
+              <ion-label mode="md" position="stacked" translate>Price</ion-label>
+              <ion-input type="number" placeholder="0.00 €"></ion-input>
+            </ion-item>
+
+          <ion-item lines="full" mode="md"> 
+            <p class="label" translate>I'm interested in swapping this</p> <ion-checkbox mode="md" slot="end"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+    
+  </div>
+
+<div padding>
+  <ion-button expand="full" mode="md" translate>Add</ion-button>
+  <p class="small"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam in quo repellat nulla. Natus a id accusamus totam delectus voluptates <a>rem corrupti, nisi cumque</a> minus consequatur vel, harum adipisci?</p>
+</div>
+</ion-content>

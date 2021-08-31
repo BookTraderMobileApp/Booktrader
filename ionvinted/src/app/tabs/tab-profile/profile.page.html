@@ -1,0 +1,106 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
+    <ion-title translate>
+      Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list mode="md">
+        <ion-item mode="md" detail lines="full" button="true" class="ava_item" [routerLink]="['/customer', 1]"> 
+          <ion-avatar item-start>
+                <ion-img src="https://medicality.es/wp-content/uploads/2019/05/Aibr5LR8T.jpg"></ion-img>
+          </ion-avatar>
+          <ion-label class="customer">
+              <p class="name">demo_1</p>
+              <p translate>View my profile</p>
+          </ion-label>
+          
+        </ion-item>
+
+        <ion-item mode="md" lines="full" detail="true" button="true" [routerLink]="['/guides']"> 
+            <ion-icon slot="start" src="../../assets/img/info.svg" size="small"> </ion-icon>
+            <p class="label" translate>Your guide to Ionvinded</p> 
+        </ion-item>  
+
+    </ion-list>
+
+    <ion-list>
+
+        <ion-item mode="md" lines="full" detail="true" button="true" [routerLink]="['/wishlist']"> 
+            <ion-icon slot="start" src="../../assets/img/like.svg" size="small"> </ion-icon>
+            <p class="label" translate>My favourites</p> 
+        </ion-item>  
+
+        <ion-item mode="md" lines="full" detail="true" button="true" [routerLink]="['/personalisation']" > 
+            <ion-icon slot="start" src="../../assets/img/settings.svg" size="small"> </ion-icon>
+            <p class="label" translate>Personalisation</p> 
+        </ion-item>
+
+        <ion-item mode="md" lines="full" detail="true" button="true" [routerLink]="['/balance']"> 
+            <ion-icon slot="start" src="../../assets/img/wallet.svg" size="small"> </ion-icon>
+            <p class="label" translate>Balance</p> 
+            <p slot="end" class="selected_item">150,00 €</p>
+        </ion-item>
+
+        <ion-item mode="md" lines="full" detail="true" button="true" [routerLink]="['/order']"> 
+            <ion-icon slot="start" src="../../assets/img/invoice.svg" size="small"> </ion-icon>
+            <p class="label" translate>My orders</p> 
+        </ion-item>
+
+        <ion-item  mode="md" lines="full" detail="true" button="true" [routerLink]="['/discount']"> 
+            <ion-icon slot="start" src="../../assets/img/percent.svg" style="width: 15px;" size="small"> </ion-icon>
+            <p class="label" translate>Bundle discounts</p> 
+            <p slot="end" class="selected_item" translate>Off</p>
+        </ion-item>
+
+    </ion-list>
+
+
+  <!--  <ion-list>
+        <ion-item lines="full" detail="true" button="true"> 
+            <ion-icon slot="start" src="../../assets/img/chat.svg" size="small"> </ion-icon>
+            <p class="label">Forum</p> 
+        </ion-item>  
+    </ion-list> -->
+
+    <ion-list mode="md">
+        <ion-item mode="md" lines="full" detail="true" button="true" [routerLink]="['/invitation']"> 
+            <ion-icon slot="start" src="../../assets/img/add-user.svg" size="small"> </ion-icon>
+            <p class="label" translate>Invite Friends</p> 
+        </ion-item>  
+    </ion-list>
+
+    <ion-list>
+<!-- 
+        <ion-item mode="md" lines="full" detail="true" button="true"> 
+            <ion-icon slot="start" src="../../assets/img/cog.svg" size="small"> </ion-icon>
+            <p class="label" translate>Settings</p> 
+        </ion-item>  -->
+
+        <ion-item mode="md" lines="full" button="true"> 
+            <ion-icon slot="start" src="../../assets/img/global.svg" size="small"> </ion-icon>
+            <ion-label class="label" translate>Language</ion-label>
+            <ion-select value="{{selected}}" okText="Ok" (ionChange)="select($event)" cancelText="Cancel">
+                <ion-select-option value="en">English</ion-select-option>
+                <ion-select-option value="fr">Francais</ion-select-option>
+              </ion-select>
+        </ion-item> 
+
+        <ion-item mode="md" lines="full" detail="true" button="true"> 
+            <ion-icon slot="start" src="../../assets/img/about.svg" size="small"> </ion-icon>
+            <p class="label" translate> About IonVinted</p> 
+        </ion-item>
+
+
+        <ion-item mode="md" lines="full" detail="true" button="true"> 
+            <ion-icon slot="start" src="../../assets/img/info.svg" size="small"> </ion-icon>
+            <p class="label" translate>Help center</p> 
+        </ion-item>
+
+    </ion-list>
+
+    <p class="finfo">Template version : 1.0.0</p>
+
+</ion-content>

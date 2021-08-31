@@ -1,0 +1,18 @@
+ion-content{
+    --background: var(--ion-color-medium-tint);
+}
+
+ion-list{
+    margin-bottom: 8px;
+    padding:0;
+}
+
+.info {
+    font-size:16px;
+    padding:10px;
+    color:var(  --ion-color-dark-tint);
+}
+
+.label {
+    font-size:14px;
+}

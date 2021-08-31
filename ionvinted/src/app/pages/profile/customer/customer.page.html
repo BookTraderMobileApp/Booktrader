@@ -1,0 +1,245 @@
+<ion-header mode="ios">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-back-button mode="md"></ion-back-button>
+        </ion-buttons>
+      <ion-title>{{user.pseudo}}</ion-title>
+      <ion-buttons slot="end">
+          <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+
+    <ion-segment (ionChange)="segmentChanged()" [(ngModel)]="segment" mode="md">
+        <ion-segment-button value="0" mode="md">
+          <ion-label translate>Wardrobe</ion-label>
+        </ion-segment-button >
+        <ion-segment-button value="1" mode="md">
+          <ion-label translate>Reviews</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="2" mode="md">
+            <ion-label translate>About</ion-label>
+          </ion-segment-button>
+    </ion-segment>
+
+    <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="false">
+      
+      <!-- Slide Wardrobe -->
+        <ion-slide>
+            <ion-list mode="md">
+
+                <ion-item mode="md" detail lines="full" button="true"> 
+                  <ion-avatar item-start>
+                      <ion-img src="/assets/img/avatars/avatar{{user.id}}.jpg"></ion-img>
+                  </ion-avatar>
+                  <ion-label class="user_block">
+                      <p class="name">{{user.pseudo}}</p>
+                      <p class="rating" *ngIf="user.review > 0"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon><ion-icon name="star-outline"></ion-icon> 
+                      <span class="review">{{user.review}} {{ 'reviews' | translate}}</span> </p>
+                      <p *ngIf="user.review == 0" translate>No reviews yet</p>
+                  </ion-label>
+                </ion-item>
+
+
+                <ion-item mode="md" detail lines="full" class="short_description">
+                    <ion-label>
+                        <p> <ion-icon name="checkmark-circle-outline"></ion-icon> Email, Google, Facebook</p>
+                        <p> <ion-icon name="locate"></ion-icon> {{user.town}}, {{user.country}}</p>
+                        <p> <ion-icon name="logo-rss"></ion-icon> <a href="#">{{user.follower}}</a> {{ 'Followers' | translate}} , <a href="#">{{user.following}}</a> {{ 'Following' | translate}}</p>
+                    </ion-label>
+                </ion-item>
+
+               
+                    <ion-grid  *ngIf="!currentUser">
+                      <ion-row>
+                          <ion-col size="6"> <ion-button mode="md" fill="outline" expand="block" translate [routerLink]="['/message', user.id]">Message</ion-button> </ion-col>
+                          <ion-col size="6"> <ion-button  mode="md" expand="block" translate> Follow</ion-button> </ion-col>
+                      </ion-row> <br>
+
+                      <ion-row>
+                          <ion-col size="9" class="bundle">
+                            <p class="label"><b translate>Shop bundles!</b></p>
+                            <p translate>Get up to 30% off</p>
+                          </ion-col>
+                          <ion-col size="3">
+                            <ion-button mode="md" expand="block" translate> Shop</ion-button>
+                          </ion-col>
+                      </ion-row>
+
+                    </ion-grid>
+
+                    <ion-list mode="md" *ngIf="currentUser">
+                      <ion-item mode="md" lines="full" detail>
+                          <ion-badge item-start>
+                              <ion-icon name="chevron-up" color="primary"></ion-icon>
+                          </ion-badge>
+                        <ion-label>
+                            <p class="bump" translate>Bump your items</p>
+                            <p translate>Increase sales now </p>
+                        </ion-label>
+                      </ion-item>
+                    </ion-list>
+
+                    <ion-item mode="md" lines="none">
+                          <span slot="start">{{memberItems.length}} {{ 'items' | translate}}</span>
+                          <a slot="end"> <ion-icon name="filter"></ion-icon> {{ 'Filter' | translate}}</a>
+                    </ion-item>
+                    
+
+                    <app-product-list [products]="memberItems" [showBump]="true" *ngIf="currentUser"></app-product-list>
+                    <app-product-list [products]="memberItems" *ngIf="!currentUser"></app-product-list>
+
+            </ion-list>
+            
+
+            
+
+        </ion-slide>
+      
+        <!-- Slide Review -->
+        <ion-slide class="review">
+          <ion-list mode="md" *ngIf="user.review > 0">
+
+            <ion-item mode="md" lines="none"> 
+              <p slot="start" class="sorted" translate>Sorted: Newest to oldest</p>
+              <p slot="end"> <a> Learn more </a></p>
+            </ion-item>
+
+            <ion-item mode="md" lines="none" class="to"> 
+              <ion-avatar item-start>
+                  <ion-img src="./assets/img/avatars/avatar10.jpg"></ion-img>
+              </ion-avatar>
+              <ion-label class="user_block">
+                  <p class="name">sandrine.govin  <span class="date">19 hours ago</span> </p> 
+                  <p class="rating">
+                      <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon>
+                  </p>
+                  <p>
+                    Perfect transaction !
+                  </p>
+            
+                  <ion-button fill="outline" color="medium" size="small" class="reply" translate> <ion-icon name="pencil-sharp"></ion-icon> Reply </ion-button> 
+              </ion-label>
+
+            </ion-item>
+
+            <div class="separate"> </div>
+            
+            <ion-item mode="md" lines="none" class="to"> 
+              <ion-avatar item-start>
+                  <ion-img src="./assets/img/avatars/avatar11.jpg"></ion-img>
+              </ion-avatar>
+              <ion-label class="user_block">
+                  <p class="name">aureliez_342  <span class="date">2 days ago</span> </p> 
+                  <p class="rating">
+                      <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon>
+                  </p>
+                  <p>
+                      Very friendly seller, I recommend !!! ❤️
+                  </p>
+            
+                  <ion-button fill="outline" color="medium" size="small" class="reply" translate> <ion-icon name="pencil-sharp"></ion-icon> Reply </ion-button> 
+              </ion-label>
+
+            </ion-item>
+
+            <div class="separate"> </div>
+
+            <ion-item mode="md" lines="none" class="to"> 
+                <ion-avatar item-start>
+                    <ion-img src="./assets/img/avatars/avatar12.jpg"></ion-img>
+                </ion-avatar>
+                <ion-label class="user_block">
+                    <p class="name">kado3452  <span class="date">3 months ago</span> </p> 
+                    <p class="rating">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon>
+                    </p>
+                    <p>
+                        Size was right on, the print was done nicely, good quality shirt. 👍👌
+                    </p>
+                </ion-label>
+  
+            </ion-item>
+  
+            <ion-item  mode="md" lines="none" class="me"> 
+                  <ion-avatar item-start>
+                      <ion-img src="./assets/img/avatars/avatar7.jpg"></ion-img>
+                  </ion-avatar>
+                  <ion-label class="user_block">
+                      <p class="name">steph_z2 </p> 
+                      <p>
+                        Thank you 😊
+                      </p>
+                  </ion-label>
+            </ion-item>
+
+            <div class="separate"> </div>
+
+            
+
+            
+          </ion-list>
+
+          <ion-list mode="md" *ngIf="user.review == 0">
+            <p translate>No reviews yet</p>
+          </ion-list>
+
+
+        </ion-slide>
+
+        <!-- Slide About -->
+        <ion-slide>
+
+          <ion-list mode="md">
+
+          <div class="cover">
+            <img src="/assets/img/avatars/avatar{{user.id}}.jpg" alt="" />
+          </div> 
+
+          <ion-item mode="md" lines="none">
+            <h1>{{user.pseudo}}</h1>
+          </ion-item>
+          <ion-item mode="md" lines="full">
+              <p>{{user.about}}</p>
+          </ion-item>
+
+          <ion-item mode="md" lines="full" class="short_description">
+              <ion-label>
+                <span style="font-size:12px; color: var(--ion-text-color);" translate>Verified info</span>
+                <p> <ion-icon name="checkmark-circle-outline"></ion-icon> Facebook</p>
+                <p> <ion-icon name="checkmark-circle-outline"></ion-icon> Email</p>
+              </ion-label>
+          </ion-item>
+
+          <ion-item mode="md" class="short_description" lines="none">
+              <ion-label>
+                  <p> <ion-icon name="locate"></ion-icon> {{user.town}}, {{user.country}}</p>
+                  <p> <ion-icon name="time-outline"></ion-icon> Last seen today 03:57 PM </p>
+                  <p> <ion-icon name="logo-rss"></ion-icon> <a href="#">{{user.follower}}</a> Followers, <a href="#">{{user.following}}</a> Following</p>
+              </ion-label>
+          </ion-item>
+          
+            <ion-grid *ngIf="!currentUser">
+                <ion-row>
+                    <ion-col size="6"> <ion-button mode="md" fill="outline" expand="block" [routerLink]="['/message', user.id]" translate>Message</ion-button> </ion-col>
+                    <ion-col size="6"> <ion-button mode="md" expand="block" translate> Follow</ion-button> </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </ion-list>
+
+          
+          
+       </ion-slide>
+      
+      
+      
+      </ion-slides>
+
+      <ion-fab *ngIf="segment==0 && currentUser" vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button [routerLink]="['/tabs/sell']"><ion-icon name="add" size="large" ></ion-icon></ion-fab-button>
+      </ion-fab>
+
+</ion-content>

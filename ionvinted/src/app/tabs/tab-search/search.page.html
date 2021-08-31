@@ -1,0 +1,48 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
+    <ion-item lines="none">
+     <ion-searchbar mode="ios" translate placeholder=" {{ 'Search for items or members' | translate }}"
+        [(ngModel)]="myInput"
+        [showCancelButton]="shouldShowCancel"
+        (ionInput)="onInput($event)"
+        (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+  </ion-item>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="search">
+
+    <ion-segment (ionChange)="segmentChanged()" [(ngModel)]="segment" mode="md">
+        <ion-segment-button mode="md" *ngFor="let category of categories; let i = index" value="{{i}}">
+          <ion-label translate>{{category.name}}</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
+    <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="false">
+     
+      <ion-slide *ngFor="let category of categories">
+
+        <ion-list style="width:100%;" mode="md">
+
+          <ion-item lines="full" button="true" mode="md" [routerLink]="['/listing', 0]"> 
+              <ion-icon color="primary" slot="start" src="../assets/img/list.svg" class="all"></ion-icon>
+            <p class="label" translate>All</p> 
+          </ion-item>  
+
+
+          <ion-item [routerLink]="['/listing', subcategories.category_id]" detail lines="full" button="true" mode="md" *ngFor="let subcategories of category.child"> 
+              <ion-icon color="primary" slot="start" src="{{subcategories.icon}}" ></ion-icon>
+              <p class="label" translate>{{subcategories.name}}</p> 
+          </ion-item>  
+  
+        </ion-list>
+
+      </ion-slide>
+
+    </ion-slides>
+
+
+   
+</ion-content>

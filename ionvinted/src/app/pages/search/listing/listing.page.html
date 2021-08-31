@@ -1,0 +1,68 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
+      <ion-buttons mode="md" slot="start">
+          <ion-back-button mode="md"></ion-back-button>
+      </ion-buttons>
+      
+      <ion-item lines="none">
+          <ion-searchbar mode="ios" translate placeholder="Search for items or members"
+             [(ngModel)]="myInput"
+             [showCancelButton]="shouldShowCancel"
+             (ionInput)="onInput($event)"
+             (ionCancel)="onCancel($event)">
+         </ion-searchbar>
+       </ion-item>
+
+      <ion-buttons slot="end" mode="md" class="save_search">
+        <ion-icon name="bookmark-outline"></ion-icon>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-segment mode="md" scrollable class="filters">
+      <ion-button fill="outline"> 
+          <ion-icon name="filter" slot="start"></ion-icon>
+          <span translate>Filter</span>
+      </ion-button>
+
+      <ion-button class="activate"> 
+          <ion-icon name="checkmark"></ion-icon>
+          <span translate>Size</span>
+      </ion-button>
+
+      <ion-button fill="outline"> 
+          <span translate>Brand</span>
+      </ion-button>
+
+      <ion-button fill="outline"> 
+          <span translate>Status</span>
+      </ion-button>
+      <ion-button fill="outline"> 
+          <span translate>Size</span>
+      </ion-button>
+
+      <ion-button fill="outline"> 
+          <span translate>Colours</span>
+      </ion-button>
+
+      <ion-button fill="outline"> 
+          <span translate>Price</span>
+      </ion-button>
+
+      <ion-button fill="outline"> 
+          <span translate>Sort by</span>
+      </ion-button>
+      
+    </ion-segment>
+  
+    <ion-item lines="none">
+      <p translate class="small" *ngIf="products.length > 0">{{products.length}}+ Results</p>
+      <p translate *ngIf="products.length == 0">No article found</p>
+    </ion-item>
+
+    <app-product-list [products]="products"></app-product-list>
+
+</ion-content>

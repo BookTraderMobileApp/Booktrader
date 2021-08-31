@@ -1,0 +1,44 @@
+<ion-header mode="ios">
+    <ion-toolbar mode="md">
+        <ion-buttons mode="md" slot="start">
+            <ion-back-button mode="md"></ion-back-button>
+        </ion-buttons>
+      <ion-title translate>Bundle discount</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+
+  <ion-list mode="md">
+      <ion-item mode="md" lines="full"> 
+        <p translate>Select discount</p> 
+        <ion-toggle mode="md" slot="end" color="primary"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <ion-list mode="md">
+    <p class="ion-padding-start label" translate>Set up discounts</p>
+
+    <ion-item mode="md" lines="none" button="true"> 
+        <p translate>2 items</p> 
+        <p slot="end">25%</p>
+    </ion-item>
+
+    <ion-item mode="md" lines="none" button="true"> 
+        <p translate>3 items</p> 
+        <p slot="end">30%</p>
+    </ion-item>
+
+    <ion-item mode="md" lines="none" button="true"> 
+        <p translate>5 items</p> 
+        <p slot="end">50%</p>
+    </ion-item>
+
+  </ion-list>
+
+  <p class="info" translate>Great! You can give discounts in ascending order, starting with any number of items.<br>
+    The better your deal, the more you'll sell! <br>
+  For help, see the <a href="#">FAQ.</a>
+</p>
+
+</ion-content>

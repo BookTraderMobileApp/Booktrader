@@ -1,0 +1,29 @@
+ion-content {
+    text-align:center;
+}
+
+ion-icon {
+    font-size: 124px;
+}
+
+ion-button {
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+.message {
+    font-weight:bold;
+    color:var(--ion-toolbar-color);
+    font-size:22px;
+    padding:5px;
+}
+
+.info {
+    color:var(--ion-toolbar-color);
+    margin-bottom:25px;
+}
+
+.sm_info {
+    font-size:12px;
+    margin-top:15px;
+}

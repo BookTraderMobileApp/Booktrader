@@ -1,0 +1,16 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
+    <ion-title translate>
+      News Feed
+    </ion-title> 
+
+      <ion-buttons slot="end" class="option" [routerLink]="['/personalisation']">
+        <ion-icon name="options-outline"></ion-icon>
+      </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <app-product-list [products]="products" [showAvatar]="true"></app-product-list>
+</ion-content>

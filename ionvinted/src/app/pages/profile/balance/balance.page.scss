@@ -1,0 +1,42 @@
+ion-content{
+    --background: var(--ion-color-medium-tint);
+}
+
+ion-list{
+    padding:0;
+}
+
+.wallet {
+    padding:20px;
+    background-color:var(--ion-color-dark-contrast);
+    text-align:center;
+    margin-top:20px;
+}
+
+.price 
+{
+    font-weight:bold;
+    color:var(--ion-color-dark);
+    font-size: 22px;
+    line-height: 35px;
+}
+
+
+.info{
+    font-size:13px;
+}
+
+.wait ion-icon{
+    font-size: 20px;
+    vertical-align: top;
+    color:var(--ion-color-medium);
+}
+
+.wait span{
+    margin-right:10px;
+}
+
+.balance {
+    font-weight:bold;
+    font-size: 15px;
+}

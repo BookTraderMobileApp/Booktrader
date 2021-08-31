@@ -1,0 +1,165 @@
+[
+
+        {
+            "category_id":1,
+            "name":"Women",
+            "icon":"../assets/img/dress.svg",
+            "child":[ 
+                {
+                    "category_id":11,
+                    "name":"Clothing",
+                    "icon":"../assets/img/dress.svg",
+                    "child":[
+                        {
+                            "category_id":112,
+                            "name":"Dresses",
+                            "child":[
+                                {
+                                    "category_id":1121,
+                                    "name":"Summer dresses"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "category_id":12,
+                    "name":"Shoes",
+                    "icon":"../assets/img/high-heels.svg",
+                    "child":[
+
+                    ]
+
+                },
+                {
+                    "category_id":13,
+                    "name":"Bags",
+                    "icon":"../assets/img/handbag.svg",
+                    "child":[
+
+                    ]
+
+                },
+                {
+                    "category_id":14,
+                    "name":"Accessories",
+                    "icon":"../assets/img/heart-shaped-necklace.svg",
+                    "child":[
+
+                    ]
+
+                },
+                {
+                    "category_id":15,
+                    "name":"Beauty",
+                    "icon":"../assets/img/lipstick.svg",
+                    "child":[
+
+                    ]
+
+                }
+            ]
+        },
+        {
+            "category_id":2,
+            "name":"Men",
+            "child":[
+                {
+                    "category_id":21,
+                    "name":"Tops & t-shirts",
+                    "icon":"../assets/img/tshirt.svg"
+                },
+                {
+                    "category_id":26,
+                    "name":"Suits & blazers",
+                    "icon":"../assets/img/sweatshirt.svg"
+                },
+                {
+                    "category_id":22,
+                    "name":"Trousers",
+                    "icon":"../assets/img/jean.svg"
+                },
+                {
+                    "category_id":23,
+                    "name":"Shorts & cropped trousers",
+                    "icon":"../assets/img/short.svg"
+                },
+                {
+                    "category_id":24,
+                    "name":"Shoes",
+                    "icon":"../assets/img/shoe.svg"
+                },
+                {
+                    "category_id":25,
+                    "name":"Accessories",
+                    "icon":"../assets/img/watch.svg"
+                },
+                {
+                    "category_id":27,
+                    "name":"Sportswear & accessories",
+                    "icon":"../assets/img/sleeveless.svg"
+                }
+            ]
+
+        },
+        {
+            "category_id":3,
+            "name":"Kids",
+            "child":[
+                {
+                    "category_id":31,
+                    "name":"Clothes",
+                    "icon":"../assets/img/pajamas.svg"
+                },
+                {
+                    "category_id":32,
+                    "name":"Toys & games",
+                    "icon":"../assets/img/toy.svg"
+                },
+                {
+                    "category_id":33,
+                    "name":"Baby care",
+                    "icon":"../assets/img/milk.svg"
+                },
+                {
+                    "category_id":34,
+                    "name":"Buggies",
+                    "icon":"../assets/img/stroller.svg"
+                },
+                {
+                    "category_id":35,
+                    "name":"Kid's furniture",
+                    "icon":"../assets/img/crib.svg"
+                },
+                {
+                    "category_id":36,
+                    "name":"Books & scholl supplies",
+                    "icon":"../assets/img/school-bag.svg"
+                }
+            ]
+
+        },
+        {
+            "category_id":4,
+            "name":"House",
+            "child":[
+                {
+                    "category_id":41,
+                    "name":"Textiles",
+                    "icon":"../assets/img/fabric.svg"
+                },
+                {
+                    "category_id":42,
+                    "name":"Home accessories",
+                    "icon":"../assets/img/bed.svg"
+                },
+                {
+                    "category_id":43,
+                    "name":"Tableware",
+                    "icon":"../assets/img/plate.svg"
+                }
+            ]
+
+        }
+
+]

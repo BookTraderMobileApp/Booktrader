@@ -1,0 +1,53 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
+      <ion-buttons mode="md" slot="start">
+          <ion-back-button mode="md"></ion-back-button>
+      </ion-buttons>
+    <ion-title translate>Payment options</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-radio-group>
+      <ion-item lines="full" mode="md" button="true">
+           
+        <ion-icon name="ios-card" class="logo" slot="start"></ion-icon>
+  
+          <div class="bankcard">
+            <b translate class="label">Bank card </b> <br>
+            <span class="info">Your card info will never be shared with the seller. IonVinted doesn't store card details without your permission.</span> <br>
+            <ion-icon src="../../../assets/img/mastercard.svg" > </ion-icon> 
+            <ion-icon src="../../../assets/img/visa.svg"  > </ion-icon> 
+            <ion-icon src="../../../assets/img/discover.svg" > </ion-icon> 
+          </div>
+  
+        <ion-radio slot="end"></ion-radio>
+            
+      </ion-item>
+
+      <ion-item lines="full" mode="md" button="true" >
+           
+          <ion-icon src="../../../assets/img/paypal.svg" class="logo" slot="start"></ion-icon>
+
+          <ion-label>
+              <b class="label">Paypal </b>
+          </ion-label>
+
+          <ion-radio slot="end" checked></ion-radio>
+              
+    </ion-item>
+  </ion-radio-group>
+
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar mode="ios">
+
+      <ion-button expand="block" mode="md" translate> Submit</ion-button>
+     
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,7 @@
+{
+  "name": "ionvinted",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

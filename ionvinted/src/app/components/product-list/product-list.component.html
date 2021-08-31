@@ -1,0 +1,44 @@
+<ion-grid class="product-list">
+    <ion-row class="product-item">
+       
+
+          <ion-col  *ngFor="let product of products; let i = index"  size="6"> 
+            <ion-row class="product-top profil" *ngIf="showAvatar == true" [routerLink]="['/customer', product.user_id]">
+              <ion-col size="2"> <div class="avatar"> <img src="../../../assets/img/avatars/avatar{{product.user_id}}.jpg" /> </div></ion-col>
+              <ion-col size="10"> <span class="user-name">{{product.user_pseudo}}</span></ion-col>
+            </ion-row>
+
+            <div class="cover" [routerLink]="['/product', product.id]">
+               <ion-img style="object-fit: cover; width:100%; height:100%" src="../../../assets/img/products/product{{product.id}}_1.jpg" ></ion-img>
+            </div>
+           
+            
+            <ion-row class="product-bottom" *ngIf="!showBump">
+              <ion-col size="8"><span class="product_price">{{product.price}} <span class="currency">€</span></span> <span class="specific_price" *ngIf="product.specific_price">{{product.specific_price}}<span class="currency">€</span></span> <br> {{product.brand}} <br> {{product.size}}</ion-col>
+              <ion-col size="4"> 
+                <span class="product_fav" (click)="toogleFav(product.id)"> 
+                  <ion-icon *ngIf="!isFav(product.id)" name="heart-outline"></ion-icon> 
+                  <ion-icon *ngIf="isFav(product.id)" name="heart" color="danger"> </ion-icon>
+                  <span class="fav_number" *ngIf="isFav(product.id)"> {{product.fav +1}}</span> 
+                  <span class="fav_number" *ngIf="!isFav(product.id)"> {{product.fav}}</span>
+                </span>
+              </ion-col>
+
+            </ion-row>
+
+            <ion-row class="product-bottom" *ngIf="showBump">
+              <ion-col size="12"><span class="product_price">{{product.price}} <span class="currency">€</span> <ion-icon name="sync" class="sync"></ion-icon></span> 
+                <br> {{product.viewed}} viewed <br> {{product.fav}} favourites
+                <ion-button fill="outline" expand="block" size="small" translate> Bump </ion-button> 
+              </ion-col>
+               
+              
+            </ion-row>
+               
+
+       
+          </ion-col>
+        
+        
+    </ion-row>
+</ion-grid>

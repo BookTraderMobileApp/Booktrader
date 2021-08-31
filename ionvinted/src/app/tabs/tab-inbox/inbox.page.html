@@ -1,0 +1,106 @@
+<ion-toolbar mode="md">
+        <ion-segment (ionChange)="segmentChanged()" [(ngModel)]="segment" mode="md">
+            <ion-segment-button value="0" mode="md">
+              <ion-label> <span translate>Messages</span> 9+</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="1" mode="md">
+              <ion-label translate>Notifications</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+</ion-toolbar>
+
+<ion-content>
+
+<ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="false">
+ 
+  <ion-slide>
+      
+    <ion-list style="width:100%;">
+
+        <ion-item lines="full" button="true" [routerLink]="['/message', 5]"> 
+          <ion-avatar item-start>
+              <ion-img src="./assets/img/avatars/avatar5.jpg"></ion-img>
+          </ion-avatar>
+          <ion-label>
+              <span class="pseudo">maxmoux</span> <span class="date" translate [translateParams]="{value: 1}">hours ago</span>
+              <span class="message">  The parcel is sent 💋 </span>
+          </ion-label>
+          
+        </ion-item>
+
+        <ion-item lines="full" button="true" [routerLink]="['/message', 2]"> 
+          <ion-avatar item-start>
+              <ion-img src="./assets/img/avatars/avatar2.jpg"></ion-img>
+          </ion-avatar>
+          <ion-label>
+              <span class="pseudo">lopito43</span> <span class="date" translate [translateParams]="{value: 4}">hours ago</span>
+              <span class="message">  Hello! 👋🏽 Interested ? </span>
+          </ion-label>
+          
+        </ion-item>
+     
+
+        <ion-item lines="full" class="unread"  button="true" [routerLink]="['/message', 3]"> 
+        
+            <ion-avatar item-start>
+              <ion-img src="./assets/img/avatars/avatar3.jpg"></ion-img>
+            </ion-avatar>
+            <ion-label>
+                <span class="pseudo">lucaskk</span> <span class="date" translate [translateParams]="{value: 12}">hours ago</span>
+                <span class="message">  No too low sorry </span>
+            </ion-label>
+         
+          </ion-item>
+
+          <!-- <ion-item lines="full" button="true" *ngFor="let number of [0,1,2,3,4,5,6,7,8]"> 
+            <ion-avatar item-start>
+              <img src="https://images.vinted.net/thumbs/50x50/031e5_39ZbDuKZK1KtEdmfe8X8hyNz.jpeg?1572277754$ee080bd050383b68f5e3decfa7a714ab3b6156d2">
+            </ion-avatar>
+            <ion-label>
+                <span class="pseudo">nonda10</span> <span class="date">il y' a 5 mois</span>
+                <span class="message">  Salut ! Intéressé ? </span>
+            </ion-label>
+            
+          </ion-item> -->
+
+          <ion-item lines="full" button="true" [routerLink]="['/message', 12]"> 
+            <ion-avatar item-start>
+                <ion-img src="./assets/img/avatars/avatar12.jpg"></ion-img>
+            </ion-avatar>
+            <ion-label>
+                <span class="pseudo">adamyan</span> <span class="date" translate [translateParams]="{value: 2}">months ago</span>
+                <span class="message">  Hi, can you do it at 5€ please, ... </span>
+            </ion-label>
+            
+          </ion-item>
+
+          <ion-item lines="full" button="true" [routerLink]="['/message', 6]"> 
+            <ion-avatar item-start>
+                <ion-img src="./assets/img/avatars/avatar6.jpg"></ion-img>
+            </ion-avatar>
+            <ion-label>
+                <span class="pseudo">rafael87</span> <span class="date" translate [translateParams]="{value: 6}">months ago</span>
+                <span class="message"> Great thanks a lot 😊👌 </span>
+            </ion-label>
+            
+          </ion-item>
+
+    </ion-list>
+  
+
+  </ion-slide>
+
+<ion-slide class="notification">
+  <ion-icon name="notifications" ></ion-icon>
+  <p translate>You have no notification</p>
+</ion-slide>
+
+
+
+</ion-slides>
+
+  <ion-fab *ngIf="segment==0" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/new-message']"><ion-icon name="pencil-sharp" size="large" ></ion-icon></ion-fab-button>
+  </ion-fab>
+
+</ion-content>

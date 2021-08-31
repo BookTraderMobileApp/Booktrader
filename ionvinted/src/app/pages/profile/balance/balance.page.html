@@ -1,0 +1,42 @@
+<ion-header mode="ios">
+    <ion-toolbar mode="md">
+        <ion-buttons mode="md" slot="start">
+            <ion-back-button mode="md"></ion-back-button>
+        </ion-buttons>
+      <ion-title translate>My Balance</ion-title>
+      <ion-buttons mode="md" slot="end" class="option">
+          <ion-icon  src="../../assets/img/cog.svg"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+
+<ion-list mode="md">
+    <ion-item mode="md" lines="full" class="wait"> 
+      <p translate>Pending balance</p> 
+      <p slot="end"> 
+        <span>10,00 €</span>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </p>
+  </ion-item>
+</ion-list>
+
+<div class="wallet">
+    <div class="price"> 150,00 €</div>
+    <div class="price_text" translate> Available balance </div>
+    <ion-button expand="full" translate>Withdraw</ion-button>
+</div>
+
+<div class="info" class="ion-padding" translate>
+  Track wath you earn and spend on IonVinted. Sell your items, and your earnings will appear here.
+</div>
+
+<ion-list mode="md">
+    <ion-item mode="md" lines="full"> 
+      <p slot ="start" class="balance" translate> Start balance</p> 
+      <p slot="end"> 0,00 € </p>
+  </ion-item>
+</ion-list>
+
+</ion-content>
