@@ -1,11 +1,33 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { canActivate,redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
-const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },
+//send unauthorized users to login
+const redirectUnauthorizedToLogin = () =>
+redirectUnauthorizedTo (['/']);
+
+  const redirectLoggedInToChat = () => redirectLoggedInTo (['/tabs']);
+
+  
+
+  const routes: Routes = [
+    {
+      path: '',
+      loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule),
+      //...canActivate(redirectLoggedInToChat)
+      canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLoggedInToChat }
+     
+  
+    },
+    {
+      path: 'tabs',
+      loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
+      //...canActivate(redirectUnauthorizedToLogin)
+      canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin }
+    },
 
   { path: 'product/:id', loadChildren: './pages/product/product.module#ProductPageModule' },
   { path: 'message/:id', loadChildren: './pages/inbox/message/message.module#MessagePageModule' },
@@ -26,7 +48,12 @@ const routes: Routes = [
   { path: 'payment/:id', loadChildren: './pages/order/payment/payment.module#PaymentPageModule' },
   { path: 'address', loadChildren: './pages/order/address/address.module#AddressPageModule' },
   { path: 'payment-option', loadChildren: './pages/order/payment-option/payment-option.module#PaymentOptionPageModule' },
-  { path: 'listing/:id', loadChildren: './pages/search/listing/listing.module#ListingPageModule' }
+  { path: 'listing/:id', loadChildren: './pages/search/listing/listing.module#ListingPageModule' },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  }
+
 ];
 @NgModule({
   imports: [
