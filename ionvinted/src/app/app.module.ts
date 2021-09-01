@@ -18,13 +18,18 @@ import { AngularFireAuthModule} from '@angular/fire/auth';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
 
 import { Camera } from '@ionic-native/camera/ngx';
+import { Facebook } from '@ionic-native/facebook/ngx';
 
 
 export function LanguageLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +38,7 @@ export function LanguageLoader(http: HttpClient) {
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireDatabaseModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -43,6 +49,7 @@ export function LanguageLoader(http: HttpClient) {
     })
     ],
   providers: [
+    Facebook,
     AngularFireAuthGuard,
     StatusBar,
     SplashScreen,
