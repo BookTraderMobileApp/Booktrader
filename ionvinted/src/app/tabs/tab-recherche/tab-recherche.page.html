@@ -5,5 +5,27 @@
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <ion-col size="6" *ngFor="let item of items">
+      
 
+    <ion-card>
+        <img src="https://firebasestorage.googleapis.com/v0/b/booktrader-4b45a.appspot.com/o/LAPINN_Plan%20de%20travail%201.png?alt=media&token=438b9643-3403-4c68-a76a-0bbc03a7f5bb" />
+        <ion-card-header>
+          
+          <ion-card-title>{{item.libelle}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+  <ion-item *ngFor="let cat of cats">
+    <ion-label>{{cat.libelle}}</ion-label>
+  </ion-item>
+</ion-list>
 </ion-content>
+
+

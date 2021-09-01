@@ -2,6 +2,8 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
+
 export const environment = {
   production: false,
   firebaseConfig:{apiKey: "AIzaSyASF9FQeNApe47pcmWGr-G_kV8QrtD5sDw",
@@ -13,6 +15,18 @@ export const environment = {
   measurementId: "G-KR3V1VFHC0"}
   
 };
+
+export const snapshotToArray = snapshot =>{
+  let returnArray =[];
+  snapshot.forEach(element => {
+    let item = element.val();
+    item.key = element.key
+
+    returnArray.push(item)
+
+  });
+  return returnArray
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
