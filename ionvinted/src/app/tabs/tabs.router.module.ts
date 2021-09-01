@@ -23,7 +23,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('./tab-search/search.module').then(m => m.SearchPageModule)
+              import('./tab-recherche/tab-recherche.module').then(m => m.TabRecherchePageModule)
           }
         ]
       },
