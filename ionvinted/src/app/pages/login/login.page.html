@@ -15,6 +15,10 @@
     clearInput="true"
     ></ion-input>
   </ion-item>
+  <div *ngIf="(email.dirty || email.touched ) && email.errors" class="errors">
+    <span *ngIf="email.errors?.required">Email is required</span>
+    <span *ngIf="email.errors?.email">Email is invalid</span>
+  </div>
 
   <ion-item>
     <ion-input
@@ -23,6 +27,10 @@
     formControlName="password"
     clearInput="true"
     ></ion-input>
+    <div *ngIf="(password.dirty || password.touched ) && password.errors" class="errors">
+      <span *ngIf="password.errors?.required">password is required</span>
+      <span *ngIf="password.errors?.minlength">password need to be 6 characters</span>
+    </div>
   </ion-item>
 
 </form>
